@@ -1,0 +1,99 @@
+/* VARIABLES
+------------------------------------------------------------------------------*/
+
+/* Brand Vars
+   Best practice is to bot use these outside the "vars" file. Rather assign to
+   a "Contextual Var" and use that to call the colout.
+------------------------------------------------------------------------------*/
+$color-brand-1:       #FF5033;	// red
+$color-brand-1-lt:    #FFA89A;
+$color-brand-1-dk:    #BF3C26;
+
+$color-brand-2:       #FF5033;	// Grey
+$color-brand-2-lt:    #F0F0EB;
+$color-brand-2-dk:    #A8A8A0;
+
+$color-brand-3:       #E4FF00;	// Yellow
+$color-brand-3-lt:    #F2FF80;
+$color-brand-3-dk:    #ABBF00;
+
+$color-brand-4:       #00C360;	// Green
+$color-brand-4-lt:    #80E1B0;
+$color-brand-4-dk:    #009248;
+
+$color-brand-5:       #00CBC4;	// Blue
+$color-brand-5-lt:    #80E5E2;
+$color-brand-5-dk:    #009893;
+
+$color-brand-6:       #FF009D;	// Pink
+$color-brand-6-lt:    #FF80CE;
+$color-brand-6-dk:    #BF0075;
+
+
+/* Conntextual Vars
+------------------------------------------------------------------------------*/
+
+/* base colours */
+$color-text:		#000000;
+
+$color-text-lt: #ffffff;	// white
+$color-text-dk:	#000000;	// black
+
+$color-bg-lt:		#ffffff;	// white
+$color-bg-dk:		#000000;	// black
+
+
+/* Interface colors
+----------------------------------------------*/
+$color-link:		    $color-brand-3-lt;
+$color-link-hover:  $color-brand-3-dk;
+
+$color-hover-lt:	#999999;
+$color-hover-dk:	#CCCCCC;
+
+
+/* buttons */
+$color-button-text-dk: $color-text-dk;
+$color-button-text-lt: $color-text-lt;
+
+$color-button-border:       #000000;
+$color-button-border-hover: #CCCCCC;
+
+$color-button-background:       blue;
+$color-button-background-hover: #000000;
+
+/* Form colours
+----------------------------------------------*/
+$color-form-1:        $color-brand-3-lt;
+
+$color-font-warning:  $color-brand-1;
+
+
+/* Typography vars
+------------------------------------------------------------------------------*/
+$font-base-size: 16;//declarte the font size in pixels with not unit 
+
+$font-body-family:    'Open Sans', 'Helvetica Nueue', 'Arial', sans-serif;
+$font-display-family: 'Open Sans', 'Helvetica Nueue', 'Arial', sans-serif;
+$font-icon-family:    'FontAwesome';
+
+
+/* Paths
+------------------------------------------------------------------------------*/
+$path-base:   '/';
+$path-images: '/assets/img';
+$path-fonts:  '/assets/fonts'; 
+
+
+/* Layout vars
+------------------------------------------------------------------------------*/
+$mobile:       480px;
+$tablet:       768px;
+$desktop:      991px;
+$desktop-wide: 1199px;
+
+
+/* Grid
+------------------------------------------------------------------------------*/
+
+

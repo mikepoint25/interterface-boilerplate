@@ -1,0 +1,547 @@
+/* Form
+----------------------------------------------*/
+form {
+	/* Structure
+	-----------------*/
+	>ul {
+		>li {
+			margin-top: 2em;
+			margin-bottom: 1em;
+		}
+	}
+
+	/* Typography
+	-----------------*/
+	legend,
+	label {
+		@include set-type(12, 700, 48);
+	}
+	@media only screen and (min-width: 600px) {
+		legend,
+		label {
+			@include set-type(16,700,48);
+		}		
+	} 
+	h4 {
+		font-family: $font-body-family;
+		@include set-type(16, 700, 48);
+		text-transform: uppercase;
+	}
+	p,
+	span {
+		text-align: left;
+		@include set-type(14, 400, 21);
+		
+		em {
+			text-align: left;
+		}
+	}
+	p+p {
+		text-indent: 0;
+	}
+	.entry-content li {
+		@include set-type (16, 400, 18);
+	}
+	figure {
+		a {
+			@include set-type (14, 400, 16);
+			color: $color-brand-1;
+		}
+		a:hover {
+			color: $color-hover-lt;
+		}
+		img {
+			max-width: 100%;
+			height: auto;
+		}
+	}
+	
+	em {
+		color: $color-brand-1;
+	}
+	
+	/* Package Price
+	------------------------*/
+	.package-price {
+		span {
+			@include set-type(16,700,24);
+		}
+		li {
+			border-top: 1px solid $color-brand-4-dk;
+			span:last-child {
+				text-align: right;
+			}
+		}
+		li:last-child {
+			border-bottom: 1px solid $color-brand-4-dk;
+		}
+	}
+
+	/* Purcahse Options
+	-----------------------*/
+	.purchase-options {
+		p {
+			@include set-type(16,400,24);
+			margin-top: 1em;
+		}
+	}
+	
+	
+	/* Form Styles
+	-------------------*/
+	fieldset {
+		display: block;
+		width: inherit;
+		min-width: 0;
+	}
+	
+	legend,
+	legend.col-10-12,
+	label,
+	label.col-10-12 {
+		display: inline-block;
+		padding: 0 5px 0 10px;
+		
+		line-height: 40px;
+		border: 1px solid $color-brand-4-dk;
+	}
+	
+	legend {
+		margin-bottom: 1em;
+		background-color: $color-brand-4-lt;
+	}
+	input {
+		@include set-type(18,700,40);
+		min-height: 40px;
+		border: 1px solid $color-brand-4-dk;
+		padding-left: 5px;
+	}
+		
+	/* custom radio buttons */
+	input[type=radio] {
+		position:absolute;
+		display:none;
+	}
+	input[type=radio] + label {
+		position: relative;
+	}
+	input[type=radio] + label:before {
+		content: "";
+		
+		display: inline-block;
+		width: 18px;
+		height: 18px;
+
+		border: 1px solid $color-brand-4-dk;
+		border-radius: 50%;
+		background-color: $color-brand-4-lt;
+		
+		margin-right: 0.75em;		
+	}
+	input[type=radio]:checked + label {
+		color: $color-brand-1;
+	}
+	input[type=radio]:checked + label:after {
+		content: "";
+
+		display: inline-block;
+		position: absolute;
+		
+		top: 11px;
+		left: 14px;
+
+		width: 10px;
+		height: 10px;
+		
+		border: 1px solid $color-brand-1;
+		border-radius: 50%;
+		
+		background: $color-brand-1;
+	}
+	@media only screen and (min-width: 600px) {
+		input[type=radio]:checked + label:after {
+			top:12px;
+		}
+	} 
+	@media only screen and (min-width: 900px) {
+		input[type=radio]:checked + label:after {
+			top:13px;
+		}
+	} 
+
+	
+	input[type=submit]{
+		cursor:pointer;
+		width: 100%;
+		
+		color:$color-brand-2;
+		border: 1px solid $color-brand-4-dk;
+		background: $color-brand-1;
+	
+		@include set-type(18, 700, 42);
+	}
+	
+	
+	/* custom option box */
+	select {
+		min-height: 40px;
+		background: $color-bg-lt;
+		border: 1px solid $color-brand-4-dk;
+
+		>option {
+			height: 40px;
+			line-height: 40px;
+			background: $color-brand-1;
+		}
+		>option:focus {
+			color: yellow;
+			background: purple;
+		}
+	}
+	
+	/* OR mobile
+	------------------*/
+	.li-or {
+		display: inline-block;
+		position: relative;
+		span {
+			display: block;
+			width: 4em;
+			
+			margin: 0 auto;
+			
+			@include set-type(18,700,48);
+			font-style: italic;
+			text-align: center;
+		}
+		span:before,
+		span:after {
+			content: "";
+			width: 40%;
+			position: absolute;
+			border-bottom: 1px solid $color-bg-dk;						
+
+			top: 26px;
+		}
+		span:before {
+			left: 0;
+		}
+		span:after {
+			right: 0;
+		}
+	}
+	
+	/* Details
+	------------------*/
+	.hentry {
+	}
+	.entry-header {
+		.entry-title {
+			
+		}	
+	}
+	.entry-content {
+		ul {
+			li {
+				position: relative;
+				margin: 0 0 2em 3em;
+				
+				padding: 0;
+				
+				[data-icon]:before {
+					display: block;
+					position: absolute;
+					
+					left: -1.5em;
+					top: 0.25em;
+				
+					@include set-type(24,300,14);				
+					font-family: $font-icon-family; /* BYO icon font, mapped smartly */
+					color: $color-brand-1;
+					
+					content: '\f05d';
+
+					speak: none; /* Not to be trusted, but hey. */
+				}
+			} 
+		}
+		
+		@media handheld, only screen and (min-width: 599px) {
+			.figure-arena {
+				margin-top: -56px;
+			}
+		}
+	}
+	.entry-footer {
+		padding-bottom: 2em;
+	}
+	
+	/* Accordion 
+	------------------------------------------*/
+
+	/* Structure
+	-----------------*/
+	.collapse {
+		.collapse-content {
+			max-height: 42px;
+			overflow: hidden;
+			
+			margin-top: 1em;
+			
+			.collapse-content {
+				margin-top: 0;
+			}
+		}
+		.collapse-content.height-0 {
+			max-height: 0;
+		}
+		
+		.collapse-content.active {
+			max-height: 100%;
+		}
+	}
+	.no-js {
+		collapse {
+			.collapse-content {
+				max-height: 100%;
+			}
+		}
+	}
+
+	/* Number of Seats */
+	#number-of-seats, #number-of-games {
+		text-align:center;
+		height:100%;
+		margin-left:5%;
+		margin-right:5%;
+		float:left;
+	}
+
+	.seatsBox{
+		height:40px;
+	}
+
+	button[data-type="minus"]{
+	}
+	button.btn-number{
+		display:block;
+		float:left;
+		width:43px;
+		height:100%;
+		font-size:0px;
+		span{
+			text-align:center;
+			color:$color-brand-1;
+			display:block;
+			line-height:0px;
+			font-size:28px;
+		}
+	}
+
+
+	button.minus-mob{
+
+	}
+
+	button.minus-desk{
+		display:none;
+	}
+	
+	button#recommend {
+		width:auto;
+		margin-left:10px;
+	}
+
+	@media only screen and (min-width: 767px) {
+		#number-of-seats, #number-of-games {
+			text-align:left;
+			padding-left:15px;
+			margin-left:0;
+			margin-right:0;
+		}
+
+		button.minus-mob{
+			display:none;
+		}
+
+		button.minus-desk{
+			display:block;
+		}
+
+		button[data-type="minus"]{
+			border-left:none;
+			border-right:none;
+		}
+	}
+
+
+	
+	/* Style
+	-----------------*/
+	.collapse-content {
+		.toggle {
+			max-height: 42px;
+			padding: 0;
+			border-left: 0;
+		}
+	}
+	.collapse {
+		
+	}
+	
+	.li {
+		span#seat-warning {
+			display: none;
+			color: #be191c;
+		}
+		span.recommendation-link {
+			margin-bottom: 15px;
+			float:left;
+			width: 100%;
+			color: #be191c;
+			a {
+				color: #be191c;
+				font-size: 14px;
+				font-weight: 700;
+			}
+			span {
+			}
+		}
+		
+		div#recommendation {
+			float:left;
+			display:none;
+			margin-bottom: 20px;
+			
+			ul.ul {
+				h4 {
+					margin-bottom:5px;
+				}
+			}
+			
+			span#recommendation-result {
+				float:left;
+				display:none;
+				margin-top:15px;
+			}
+		}
+	}
+
+	/* Disabled inputs 
+	----------------------*/
+	li.disabled {
+		label {
+			font-family: $font-body-family;
+			color: $color-brand-4;
+			font-weight: 400;
+			
+			a {
+				text-decoration: none;
+				font-style: normal;
+			}
+		}
+		input[type=radio] + label:before {
+			border: 1px solid $color-brand-4-lt;
+			background-color: $color-brand-2;
+		}
+	}
+}
+
+
+.error-link {
+	display: none;
+	color: #be191c;
+
+}
+
+
+/* Contact Form */
+form.contact{
+	input{
+		width:100%;
+	}
+	fieldset{
+	margin-bottom:30px;
+		legend{
+			padding:0px 0px 0px 0px;
+			background:transparent;
+			border:none;
+		}
+	}
+
+	.selectbox-container{
+		height:43px;
+		input[type='text']{
+			margin-bottom:0px;
+			padding-left:5px;
+			height:100%;
+		}
+
+		.selectbox-toggle{
+			display:inline-block;
+			height:100%;
+			width:43px;
+			border:none;
+			background:$color-brand-1;
+			span{
+				margin-top:10px;
+				color:$color-brand-2;
+				font-size:26px;
+			}
+		}
+	}
+
+	label{
+		-webkit-touch-callout: none;
+		-webkit-user-select: none;
+		-khtml-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+		border:none;
+		display:block;
+		padding:0px 0px 0px 0px;
+	}
+
+	p label{
+		padding-left:9px;
+	}
+
+	#selectbox-display{
+		width:238px;
+		background:transparent;
+	}
+
+	
+	#toggle{
+		display:none;
+	}
+
+	.selectbox-dropdown{
+		width:238px + 43px;
+		clear:both;
+		label{
+			padding-left:10px;
+		}
+		li{
+			width:100%;
+			background:$color-brand-1;
+			color:$color-brand-2;
+			input{
+				
+			}
+		}
+		li:hover{
+			background-color: $color-brand-1-dk;
+		}
+	}
+
+	.display-selectbox-dropdown{
+		display:none;
+	}
+	
+	
+	
+	
+	
+}
